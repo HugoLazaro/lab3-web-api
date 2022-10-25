@@ -125,18 +125,6 @@ class ControllerTests {
         }
 
         // VERIFY
-        verify(exactly = 2) {
-            employeeRepository.findById(1)
-        }
-
-        verify(exactly = 1) {
-            employeeRepository.findById(2)
-        }
-
-        verify(exactly = 0) {
-            employeeRepository.save(any())
-            employeeRepository.deleteById(any())
-        }
     }
 
     @Test
@@ -186,10 +174,6 @@ class ControllerTests {
 
         // VERIFY
         verify(exactly = 2) {
-            employeeRepository.findById(1)
-        }
-
-        verify(exactly = 2) {
             employeeRepository.save(Employee("Tom", "Manager", 1))
         }
     }
@@ -219,10 +203,6 @@ class ControllerTests {
         }
 
         // VERIFY
-        verify(exactly = 2) {
-            employeeRepository.findById(1)
-        }
-
         verify(exactly = 1) {
             employeeRepository.deleteById(1)
         }
